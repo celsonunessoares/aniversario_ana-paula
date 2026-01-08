@@ -113,7 +113,7 @@
 
         /* Informações do Evento */
         .event-info {
-            padding: 10px 30px 20px;
+            padding: 10px 30px 0;
             text-align: center;
         }
 
@@ -155,10 +155,11 @@
         /* Seção Como Chegar */
         .location-section {
             background: #fff;
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            padding: 25px 30px;
+            border-radius: 0;
+            margin-bottom: 0;
+            box-shadow: none;
+            text-align: center;
         }
 
         .location-section h2 {
@@ -221,6 +222,7 @@
             background: #fff;
             padding: 30px;
             border-top: 1px solid #f0f0f0;
+            text-align: center;
         }
 
         .rsvp-form h3 {
@@ -323,23 +325,9 @@
                 <p>Condomínio Village Jóia</p>
                 <span style="font-size: 0.8rem; color: #888;">Área de Lazer</span>
             </div>
-
-            <div class="location-section">
-                <h2>Como Chegar</h2>
-                <p class="location-text">
-                    Clique no botão abaixo para abrir a rota no Google Maps e chegar facilmente ao local da festa.
-                </p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Condom%C3%ADnio+Village+J%C3%B3ia+-+BR-226,+Rua+Ametista,+Lote+AN-07,+Bairro+J%C3%B3ia,+Timon+-+MA,+65632-275"
-                    target="_blank" class="btn btn-maps">
-                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z" />
-                        </svg>
-                    Abrir Google Maps
-                </a>
-            </div>
         </div>
 
+        <!-- Seção de Confirmação de Presença agora antes de Como Chegar -->
         <section class="rsvp-form" id="rsvp">
             <h3>Confirmar Presença</h3>
             <div class="input-group">
@@ -354,6 +342,22 @@
                 Confirmar Presença
             </button>
         </section>
+
+        <!-- Seção Como Chegar movida para o final -->
+        <div class="location-section">
+            <h2>Como Chegar</h2>
+            <p class="location-text">
+                Clique no botão abaixo para abrir a rota no Google Maps e chegar facilmente ao local da festa.
+            </p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Condom%C3%ADnio+Village+J%C3%B3ia+-+BR-226,+Rua+Ametista,+Lote+AN-07,+Bairro+J%C3%B3ia,+Timon+-+MA,+65632-275"
+                target="_blank" class="btn btn-maps">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z" />
+                    </svg>
+                Abrir Google Maps
+            </a>
+        </div>
 
         <footer>
             Celebração Exclusiva • Ana Paula 40 Anos
