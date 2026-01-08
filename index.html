@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Paula - 40 Anos | Convite Especial</title>
+    <!-- Google Fonts: Playfair Display para títulos e Montserrat para corpo -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --rose-gold: #B76E79;
+            --gold: #D4AF37;
+            --champagne: #F7E7CE;
+            --dark-text: #4A4A4A;
+            --light-bg: #FFF9F9;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fdf2f2;
+            color: var(--dark-text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Container Principal */
+        .invitation-card {
+            background: var(--light-bg);
+            width: 100%;
+            max-width: 450px;
+            margin: 20px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+            animation: fadeIn 1.2s ease-out;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Detalhes Decorativos */
+        .decoration-top {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            background: var(--rose-gold);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+
+        /* Cabeçalho */
+        header {
+            padding: 40px 20px 10px;
+            text-align: center;
+            background: linear-gradient(to bottom, #fff, var(--light-bg));
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--rose-gold);
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--gold);
+        }
+
+        /* Imagem da Aniversariante */
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: var(--champagne);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Informações do Evento */
+        .event-info {
+            padding: 10px 30px 20px;
+            text-align: center;
+        }
+
+        .event-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--dark-text);
+            margin-bottom: 20px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            border-bottom: 2px solid var(--champagne);
+        }
+
+        .info-item strong {
+            display: block;
+            color: var(--rose-gold);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Seção Como Chegar */
+        .location-section {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+        }
+
+        .location-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--rose-gold);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .location-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        /* Botões */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .btn-maps {
+            background-color: white;
+            color: var(--dark-text);
+            border: 1.5px solid var(--gold);
+        }
+
+        .btn-maps:hover {
+            background-color: var(--champagne);
+            transform: translateY(-2px);
+        }
+
+        .btn-rsvp {
+            background: linear-gradient(135deg, var(--rose-gold), #d98b96);
+            color: white;
+            box-shadow: 0 4px 15px rgba(183, 110, 121, 0.3);
+        }
+
+        .btn-rsvp:active {
+            transform: scale(0.98);
+        }
+
+        /* Formulário RSVP */
+        .rsvp-form {
+            background: #fff;
+            padding: 30px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .rsvp-form h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+            color: var(--rose-gold);
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.75rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #888;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: var(--rose-gold);
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.65rem;
+            color: #bbb;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="invitation-card">
+        <div class="decoration-top"></div>
+
+        <header>
+            <p class="subtitle">Comemoração Especial</p>
+            <h1>Ana Paula</h1>
+            <p class="subtitle">40 Anos</p>
+        </header>
+
+        <div class="profile-container">
+            <div class="profile-img">
+                <!-- Imagem local conforme solicitado -->
+                <img src="img/ana.png" alt="Ana Paula - 40 Anos">
+            </div>
+        </div>
+
+        <div class="event-info">
+            <h2 class="event-title">Vamos celebrar 40 anos de vida!</h2>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Data</strong>
+                    <p>31/01</p>
+                </div>
+                <div class="info-item">
+                    <strong>Horário</strong>
+                    <p>11h da manhã</p>
+                </div>
+            </div>
+
+            <div class="info-item" style="width: 100%; margin-bottom: 25px;">
+                <strong>Local</strong>
+                <p>Condomínio Village Jóia</p>
+                <span style="font-size: 0.8rem; color: #888;">Área de Lazer</span>
+            </div>
+
+            <div class="location-section">
+                <h2>Como Chegar</h2>
+                <p class="location-text">
+                    Clique no botão abaixo para abrir a rota no Google Maps e chegar facilmente ao local da festa.
+                </p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Condom%C3%ADnio+Village+J%C3%B3ia+-+BR-226,+Rua+Ametista,+Lote+AN-07,+Bairro+J%C3%B3ia,+Timon+-+MA,+65632-275"
+                    target="_blank" class="btn btn-maps">
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2Z" />
+                        </svg>
+                    Abrir Google Maps
+                </a>
+            </div>
+        </div>
+
+        <section class="rsvp-form" id="rsvp">
+            <h3>Confirmar Presença</h3>
+            <div class="input-group">
+                <label for="guest-name">SEU NOME</label>
+                <input type="text" id="guest-name" placeholder="Seu nome + (e de quem vem com você)">
+            </div>
+            <button onclick="sendRSVP()" class="btn btn-rsvp">
+                <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.71 20.28 11.92C20.28 16.5 16.58 20.2 12.04 20.2C10.64 20.2 9.26 19.85 8.05 19.19L7.76 19.03L4.64 19.85L5.48 16.79L5.3 16.5C4.58 15.35 4.2 14.05 4.2 12.71C4.2 11.91 4.2 11.91 4.2 11.91C4.2 7.37 7.72 3.67 12.05 3.67M15.93 14.16C15.72 14.05 14.67 13.54 14.48 13.47C14.29 13.4 14.15 13.36 14.01 13.57C13.87 13.78 13.48 14.23 13.36 14.37C13.24 14.5 13.12 14.53 12.91 14.42C12.7 14.31 12.02 14.09 11.21 13.36C10.58 12.8 10.16 12.11 10.04 11.9C9.92 11.69 10.03 11.58 10.14 11.47C10.23 11.37 10.34 11.23 10.45 11.11C10.55 11 10.59 10.92 10.66 10.78C10.73 10.64 10.69 10.52 10.64 10.41C10.59 10.3 10.15 9.22 9.97 8.78C9.79 8.35 9.61 8.41 9.47 8.41C9.34 8.41 9.2 8.41 9.06 8.41C8.92 8.41 8.69 8.46 8.5 8.67C8.31 8.88 7.77 9.38 7.77 10.4C7.77 11.42 8.51 12.41 8.61 12.55C8.72 12.69 10.07 14.76 12.14 15.65C12.63 15.86 13.01 15.99 13.3 16.09C13.8 16.25 14.25 16.23 14.61 16.17C15.01 16.11 15.84 15.67 16.01 15.2C16.18 14.73 16.18 14.33 16.13 14.25C16.08 14.17 15.97 14.13 15.76 14.02" />
+                    </svg>
+                Confirmar Presença
+            </button>
+        </section>
+
+        <footer>
+            Celebração Exclusiva • Ana Paula 40 Anos
+        </footer>
+    </div>
+
+    <script>
+        function sendRSVP() {
+            const name = document.getElementById('guest-name').value;
+            const phone = "5586998017727";
+
+            if (!name || name.trim() === "") {
+                const messageBox = document.createElement('div');
+                messageBox.style.cssText =
+                    "position:fixed; top:20px; left:50%; transform:translateX(-50%); background:#B76E79; color:white; padding:15px 25px; border-radius:10px; z-index:1000; font-weight:600; box-shadow:0 5px 15px rgba(0,0,0,0.2);";
+                messageBox.innerText = "Por favor, digite seu nome.";
+                document.body.appendChild(messageBox);
+                setTimeout(() => messageBox.remove(), 3000);
+                return;
+            }
+
+            const message = encodeURIComponent(
+                `Olá! Estou confirmando minha presença no aniversário de 40 anos da Ana Paula 🎉\n\nConvidado(a): ${name}`
+                );
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
+
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+
+</html>
