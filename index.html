@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ana Paula - Level 40 Unlocked</title>
+    <title>Ana Paula - Level 4.0 Unlocked</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700;900&family=Exo+2:ital,wght@1,800&display=swap"
@@ -26,36 +26,49 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             min-height: 100vh;
             overflow-x: hidden;
         }
 
-        /* Fundo Synthwave Estilizado Profundo */
+        /* Fundo Synthwave com Sol Neon */
         .retro-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background:
-                radial-gradient(circle at 50% 40%, #2a0b4e 0%, var(--bg-dark) 70%);
+            background: radial-gradient(circle at 50% 40%, #2a0b4e 0%, var(--bg-dark) 80%);
             z-index: -2;
+        }
+
+        .synth-sun {
+            position: fixed;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(to bottom, #ffcc00, #ff00ff);
+            border-radius: 50%;
+            z-index: -1;
+            box-shadow: 0 0 60px rgba(255, 0, 255, 0.4);
+            -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 50%, black 60%, transparent 60%, black 70%, transparent 70%, black 80%, transparent 80%, black 90%, transparent 90%, black 100%);
         }
 
         .retro-grid {
             position: fixed;
-            top: 0;
-            left: 0;
+            bottom: 0;
+            left: 50%;
             width: 200%;
-            height: 200%;
+            height: 50%;
             background:
-                linear-gradient(transparent 0%, rgba(0, 255, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, transparent 0%, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            transform: perspective(600px) rotateX(60deg) translateY(-20%);
+                linear-gradient(transparent 0%, rgba(0, 255, 255, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, transparent 0%, rgba(0, 255, 255, 0.15) 1px, transparent 1px);
+            background-size: 60px 60px;
+            transform: perspective(400px) rotateX(60deg) translateX(-50%);
             z-index: -1;
-            animation: moveGrid 12s linear infinite;
+            animation: moveGrid 15s linear infinite;
         }
 
         @keyframes moveGrid {
@@ -68,19 +81,18 @@
             }
         }
 
-        /* Tipografia e Brilhos */
         .neon-text-pink {
             text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink), 0 0 40px var(--neon-pink);
             color: white;
         }
 
         .neon-text-blue {
-            text-shadow: 0 0 5px var(--neon-blue), 0 0 15px var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
             color: var(--neon-blue);
         }
 
         .neon-text-yellow {
-            text-shadow: 0 0 8px var(--neon-yellow), 0 0 15px var(--neon-yellow);
+            text-shadow: 0 0 15px var(--neon-yellow);
             color: var(--neon-yellow);
         }
 
@@ -88,96 +100,66 @@
             font-family: 'Press Start 2P', cursive;
         }
 
-        /* Container Principal Premium */
         .invite-card {
-            background: rgba(10, 10, 30, 0.8);
-            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 30, 0.85);
+            backdrop-filter: blur(25px);
             border: 2px solid transparent;
             border-image: linear-gradient(135deg, var(--neon-blue), var(--neon-purple), var(--neon-pink), var(--neon-yellow)) 1;
-            box-shadow: 0 0 60px rgba(188, 19, 254, 0.25);
+            box-shadow: 0 0 80px rgba(188, 19, 254, 0.3);
             position: relative;
-            max-width: 480px;
+            max-width: 500px;
             width: 90%;
-            padding: 40px 25px;
-            margin: 20px 0;
+            padding: 60px 30px;
+            margin: 60px 10px;
             text-align: center;
             overflow: hidden;
+            transition: transform 0.1s ease-out;
         }
 
-        /* Moldura de Foto Neon */
-        .photo-container {
-            width: 160px;
-            height: 160px;
-            margin: 0 auto 20px;
-            position: relative;
-            border-radius: 50%;
-            padding: 5px;
-            background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink));
-            box-shadow: 0 0 20px var(--neon-blue), 0 0 40px var(--neon-pink);
-        }
-
-        .photo-inner {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            overflow: hidden;
-            background: #111;
-            border: 3px solid var(--bg-dark);
-            position: relative;
-        }
-
-        .photo-inner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: contrast(1.1) brightness(1.1);
-        }
-
-        /* Elementos de Decoração */
         .corner-accent {
             position: absolute;
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             border: 2px solid var(--neon-yellow);
             opacity: 0.6;
         }
 
         .top-l {
-            top: 15px;
-            left: 15px;
+            top: 20px;
+            left: 20px;
             border-right: 0;
             border-bottom: 0;
         }
 
         .top-r {
-            top: 15px;
-            right: 15px;
+            top: 20px;
+            right: 20px;
             border-left: 0;
             border-bottom: 0;
         }
 
         .bot-l {
-            bottom: 15px;
-            left: 15px;
+            bottom: 20px;
+            left: 20px;
             border-right: 0;
             border-top: 0;
         }
 
         .bot-r {
-            bottom: 15px;
-            right: 15px;
+            bottom: 20px;
+            right: 20px;
             border-left: 0;
             border-top: 0;
         }
 
         .scanline {
             width: 100%;
-            height: 100px;
+            height: 120px;
             z-index: 10;
             background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.03) 50%, rgba(0, 0, 0, 0) 100%);
             position: absolute;
             bottom: 100%;
-            animation: scanline 8s linear infinite;
+            animation: scanline 10s linear infinite;
             pointer-events: none;
         }
 
@@ -187,7 +169,7 @@
             }
 
             100% {
-                bottom: -100px;
+                bottom: -120px;
             }
         }
 
@@ -196,8 +178,8 @@
             font-weight: 800;
             font-style: italic;
             text-transform: uppercase;
-            font-size: 3.5rem;
-            line-height: 0.9;
+            font-size: 3.8rem;
+            line-height: 0.95;
             letter-spacing: -2px;
             margin-bottom: 10px;
         }
@@ -205,25 +187,27 @@
         .btn-action {
             display: block;
             width: 100%;
-            padding: 18px;
+            padding: 20px;
             border-radius: 4px;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             margin-bottom: 15px;
+            text-decoration: none;
         }
 
         .btn-confirm {
             background: var(--neon-pink);
             color: white;
-            box-shadow: 0 0 25px rgba(255, 0, 255, 0.5);
+            box-shadow: 0 0 25px rgba(255, 0, 255, 0.6);
             cursor: pointer;
+            border: none;
         }
 
         .btn-confirm:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 40px var(--neon-pink);
+            transform: scale(1.05);
+            box-shadow: 0 0 45px var(--neon-pink);
             filter: brightness(1.2);
         }
 
@@ -236,7 +220,31 @@
         .btn-map:hover {
             background: var(--neon-blue);
             color: black;
-            box-shadow: 0 0 25px var(--neon-blue);
+            box-shadow: 0 0 30px var(--neon-blue);
+        }
+
+        /* Indicador de Rolagem */
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
         }
     </style>
 </head>
@@ -244,6 +252,7 @@
 <body>
 
     <div class="retro-bg"></div>
+    <div class="synth-sun"></div>
     <div class="retro-grid"></div>
 
     <main class="invite-card" id="card">
@@ -255,56 +264,54 @@
 
         <!-- Cabeçalho -->
         <header class="relative z-10">
-            <div class="pixel-font text-[9px] md:text-[10px] neon-text-yellow mb-6 tracking-[0.3em] animate-pulse">
+            <div class="pixel-font text-[9px] md:text-[11px] neon-text-yellow mb-8 tracking-[0.4em] animate-pulse">
                 [ ACHIEVEMENT UNLOCKED ]
             </div>
 
-            <h2 class="pixel-font text-lg md:text-xl text-white mb-6 tracking-tighter">
-                LEVEL 40 UNLOCKED
+            <h2 class="pixel-font text-lg text-white mb-10 tracking-widest">
+                LEVEL 4.0
             </h2>
 
-            <!-- Espaço para a Foto da Ana Paula -->
-            <div class="photo-container">
-                <div class="photo-inner">
-                    <!-- Caminho da imagem: img/ana.png -->
-                    <img src="img/ana.png" alt="Ana Paula"
-                        onerror="this.src='https://via.placeholder.com/160/111/ff00ff?text=ANA+PAULA'">
-                </div>
-            </div>
-
-            <p class="text-xs uppercase tracking-[0.5em] text-cyan-400 font-bold mb-2">Aniversário da</p>
             <h1 class="hero-title neon-text-pink italic">
                 Ana Paula
             </h1>
-
-            <div class="inline-block mt-4 px-8 py-2 border-x-2 border-white/20">
-                <p class="text-sm tracking-[0.6em] font-light text-white opacity-80 uppercase">Máquina do Tempo</p>
-            </div>
+            <p class="text-xs uppercase tracking-[0.6em] text-cyan-400 font-bold mb-12">Aniversário</p>
         </header>
 
-        <!-- Seção de Informações -->
-        <section class="relative z-10 mt-8">
-            <div class="grid grid-cols-2 gap-px bg-white/10">
-                <div class="bg-[#0a0a20] p-6">
-                    <span class="pixel-font text-[8px] text-cyan-400 block mb-3">DATA</span>
-                    <p class="text-3xl font-black tracking-tighter">31.01</p>
-                    <p class="text-[10px] text-pink-500 font-bold mt-1">2026</p>
+        <!-- Informações -->
+        <section class="relative z-10 mt-16">
+            <div class="grid grid-cols-2 gap-1 bg-white/10 p-1">
+                <div class="bg-[#0a0a20] py-8">
+                    <span class="pixel-font text-[9px] text-cyan-400 block mb-3">DATA</span>
+                    <p class="text-4xl font-black tracking-tighter">31.01</p>
+                    <p class="text-xs text-pink-500 font-bold mt-1">2026</p>
                 </div>
-                <div class="bg-[#0a0a20] p-6">
-                    <span class="pixel-font text-[8px] text-cyan-400 block mb-3">HORÁRIO</span>
-                    <p class="text-3xl font-black tracking-tighter">20:00</p>
-                    <p class="text-[10px] text-pink-500 font-bold mt-1">HORA LOCAL</p>
+                <div class="bg-[#0a0a20] py-8">
+                    <span class="pixel-font text-[9px] text-cyan-400 block mb-3">HORÁRIO</span>
+                    <p class="text-4xl font-black tracking-tighter">20:00</p>
+                    <p class="text-xs text-pink-500 font-bold mt-1">SÁBADO</p>
                 </div>
+            </div>
+
+            <!-- Indicador de Rolagem -->
+            <div class="mt-16 mb-4 flex flex-col items-center gap-2 scroll-indicator">
+                <span class="pixel-font text-[7px] text-white/40 tracking-[0.3em]">MISSÃO: VER DETALHES</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-400" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7-7-7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-7 7-7-7"
+                        opacity="0.5" />
+                </svg>
             </div>
 
             <div class="mt-8 px-4">
-                <div class="flex items-center justify-center gap-3 mb-2">
-                    <div class="h-px flex-1 bg-gradient-to-r from-transparent to-white/20"></div>
-                    <span class="pixel-font text-[8px] text-yellow-400">LOCATION</span>
-                    <div class="h-px flex-1 bg-gradient-to-l from-transparent to-white/20"></div>
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <div class="h-px flex-1 bg-gradient-to-r from-transparent to-white/30"></div>
+                    <span class="pixel-font text-[9px] text-yellow-400">LOCALIZAÇÃO</span>
+                    <div class="h-px flex-1 bg-gradient-to-l from-transparent to-white/30"></div>
                 </div>
-                <p class="text-xl font-bold tracking-tight mb-1">Máquina do Tempo</p>
-                <p class="text-xs opacity-60 leading-relaxed max-w-[250px] mx-auto">
+                <p class="text-2xl font-black tracking-tight mb-2 neon-text-blue">Máquina do Tempo</p>
+                <p class="text-sm opacity-70 leading-relaxed max-w-[420px] mx-auto">
                     Avenida Homero Castelo Branco, nº 330<br>
                     Teresina - Piauí
                 </p>
@@ -312,43 +319,43 @@
         </section>
 
         <!-- Ações -->
-        <div class="relative z-10 mt-10 px-2">
+        <div class="relative z-10 mt-20 px-4">
             <button onclick="confirmPresence()" class="btn-action btn-confirm">
                 Confirmar Presença
             </button>
-            <p class="pixel-font text-[7px] text-white/60 mb-4 tracking-wider">
-                FAVOR CONFIRMAR ATÉ 28.01
+            <p class="pixel-font text-[8px] text-white/60 mb-8 tracking-widest">
+                FAVOR CONFIRMAR ATÉ 28 DE JANEIRO
             </p>
 
             <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Homero+Castelo+Branco+330" target="_blank"
-                class="btn-action btn-map flex items-center justify-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                class="btn-action btn-map flex items-center justify-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                Abrir no GPS
+                Abrir Mapa no GPS
             </a>
         </div>
 
         <!-- Rodapé -->
-        <footer class="relative z-10 mt-8 pt-8 border-t border-white/5 opacity-50">
-            <p class="pixel-font text-[7px] leading-relaxed tracking-widest">
+        <footer class="relative z-10 mt-16 pt-10 border-t border-white/10">
+            <p class="pixel-font text-[8px] leading-loose tracking-[0.3em] opacity-60">
                 PREPARE-SE PARA UMA VIAGEM NO TEMPO<br>
-                HIGH SCORE: 40 ANOS DE HISTÓRIA
+                HISTÓRIA CARREGANDO: 100%
             </p>
-            <div class="mt-4 flex justify-center gap-2">
-                <div class="w-1.5 h-1.5 rounded-full bg-cyan-400"></div>
-                <div class="w-1.5 h-1.5 rounded-full bg-pink-500"></div>
-                <div class="w-1.5 h-1.5 rounded-full bg-yellow-400"></div>
+            <div class="mt-6 flex justify-center gap-3">
+                <div class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></div>
+                <div class="w-2 h-2 rounded-full bg-pink-500 animate-pulse" style="animation-delay: 0.2s"></div>
+                <div class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" style="animation-delay: 0.4s"></div>
             </div>
         </footer>
     </main>
 
     <div id="toast"
-        class="fixed bottom-10 bg-yellow-400 text-black px-8 py-3 rounded font-black text-xs z-50 opacity-0 transition-all duration-300 translate-y-10">
+        class="fixed bottom-10 bg-yellow-400 text-black px-10 py-4 rounded font-black text-xs z-50 opacity-0 transition-all duration-300 translate-y-10 pointer-events-none shadow-[0_0_30px_rgba(255,242,0,0.5)]">
         REDIRECIONANDO...
     </div>
 
@@ -358,10 +365,9 @@
             toast.style.opacity = '1';
             toast.style.transform = 'translateY(-20px)';
 
-            // Redirecionamento para o WhatsApp
             const phone = "5586998017727";
             const message = encodeURIComponent(
-                "Olá Ana Paula! Confirmo minha presença no seu aniversário de 40 anos na Máquina do Tempo! 🎮✨");
+                "Olá Ana Paula! Confirmo minha presença no seu aniversário de 4.0 na Máquina do Tempo! 🎮✨");
             const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
 
             setTimeout(() => {
@@ -369,22 +375,22 @@
             }, 1000);
         }
 
-        // Efeito de movimento premium no card
         const card = document.getElementById('card');
         document.addEventListener('mousemove', (e) => {
             if (window.innerWidth > 768) {
-                const xAxis = (window.innerWidth / 2 - e.pageX) / 45;
-                const yAxis = (window.innerHeight / 2 - e.pageY) / 45;
+                const xAxis = (window.innerWidth / 2 - e.pageX) / 60;
+                const yAxis = (window.innerHeight / 2 - e.pageY) / 60;
                 card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
             }
         });
 
-        // Suporte para movimento no celular (gyroscope)
         if (window.DeviceOrientationEvent) {
             window.addEventListener('deviceorientation', (e) => {
-                const x = e.beta / 4;
-                const y = e.gamma / 4;
-                card.style.transform = `rotateX(${x}deg) rotateY(${y}deg)`;
+                if (e.beta && e.gamma) {
+                    const x = e.beta / 8;
+                    const y = e.gamma / 8;
+                    card.style.transform = `rotateX(${x}deg) rotateY(${y}deg)`;
+                }
             });
         }
     </script>
