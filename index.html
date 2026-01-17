@@ -114,6 +114,7 @@
             text-align: center;
             overflow: hidden;
             transition: transform 0.1s ease-out;
+            perspective: 1000px;
         }
 
         .corner-accent {
@@ -223,7 +224,6 @@
             box-shadow: 0 0 30px var(--neon-blue);
         }
 
-        /* Indicador de Rolagem */
         .scroll-indicator {
             animation: bounce 2s infinite;
         }
@@ -245,6 +245,15 @@
             60% {
                 transform: translateY(-5px);
             }
+        }
+
+        /* Estilo para a Nota de Acesso */
+        .obs-box {
+            border-left: 3px solid var(--neon-yellow);
+            background: rgba(255, 242, 0, 0.05);
+            padding: 15px;
+            margin: 30px 0;
+            text-align: left;
         }
     </style>
 </head>
@@ -293,18 +302,8 @@
                 </div>
             </div>
 
-            <!-- Indicador de Rolagem -->
-            <div class="mt-16 mb-4 flex flex-col items-center gap-2 scroll-indicator">
-                <span class="pixel-font text-[7px] text-white/40 tracking-[0.3em]">MISSÃO: VER DETALHES</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-400" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7-7-7" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-7 7-7-7"
-                        opacity="0.5" />
-                </svg>
-            </div>
-
-            <div class="mt-8 px-4">
+            <!-- Localização -->
+            <div class="mt-12 px-4">
                 <div class="flex items-center justify-center gap-4 mb-4">
                     <div class="h-px flex-1 bg-gradient-to-r from-transparent to-white/30"></div>
                     <span class="pixel-font text-[9px] text-yellow-400">LOCALIZAÇÃO</span>
@@ -316,16 +315,24 @@
                     Teresina - Piauí
                 </p>
             </div>
+
+            <!-- Indicador de Rolagem -->
+            <div class="mt-12 mb-4 flex flex-col items-center gap-2 scroll-indicator">
+                <span class="pixel-font text-[7px] text-white/40 tracking-[0.3em]">MISSÃO: CONFIRMAR</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-400" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7-7-7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-7 7-7-7"
+                        opacity="0.5" />
+                </svg>
+            </div>
         </section>
 
         <!-- Ações -->
-        <div class="relative z-10 mt-20 px-4">
+        <div class="relative z-10 mt-10 px-4">
             <button onclick="confirmPresence()" class="btn-action btn-confirm">
                 Confirmar Presença
             </button>
-            <p class="pixel-font text-[8px] text-white/60 mb-8 tracking-widest">
-                FAVOR CONFIRMAR ATÉ 28 DE JANEIRO
-            </p>
 
             <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Homero+Castelo+Branco+330" target="_blank"
                 class="btn-action btn-map flex items-center justify-center gap-3">
@@ -340,8 +347,18 @@
             </a>
         </div>
 
+        <!-- Nota de Acesso Final -->
+        <div class="relative z-10 px-4">
+            <div class="obs-box">
+                <p class="text-[10px] text-yellow-400 pixel-font mb-2">NOTA DE ACESSO</p>
+                <p class="text-xs leading-relaxed text-white/90">
+                    Sistema de comanda individual: entrada e consumo por conta do convidado.
+                </p>
+            </div>
+        </div>
+
         <!-- Rodapé -->
-        <footer class="relative z-10 mt-16 pt-10 border-t border-white/10">
+        <footer class="relative z-10 mt-6 pt-10 border-t border-white/10">
             <p class="pixel-font text-[8px] leading-loose tracking-[0.3em] opacity-60">
                 PREPARE-SE PARA UMA VIAGEM NO TEMPO<br>
                 HISTÓRIA CARREGANDO: 100%
@@ -365,7 +382,7 @@
             toast.style.opacity = '1';
             toast.style.transform = 'translateY(-20px)';
 
-            const phone = "5586998017727";
+            const phone = "5586999413630";
             const message = encodeURIComponent(
                 "Olá Ana Paula! Confirmo minha presença no seu aniversário de 4.0 na Máquina do Tempo! 🎮✨");
             const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
