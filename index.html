@@ -44,11 +44,11 @@
 
         .synth-sun {
             position: fixed;
-            top: 15%;
+            top: 10%;
             left: 50%;
             transform: translateX(-50%);
-            width: 300px;
-            height: 300px;
+            width: 280px;
+            height: 280px;
             background: linear-gradient(to bottom, #ffcc00, #ff00ff);
             border-radius: 50%;
             z-index: -1;
@@ -108,47 +108,56 @@
             box-shadow: 0 0 80px rgba(188, 19, 254, 0.3);
             position: relative;
             max-width: 500px;
-            width: 90%;
-            padding: 60px 30px;
-            margin: 60px 10px;
+            width: 95%;
+            padding: 30px 20px;
+            /* Reduzido padding superior */
+            margin: 20px 10px;
+            /* Reduzido margem externa */
             text-align: center;
             overflow: hidden;
             transition: transform 0.1s ease-out;
             perspective: 1000px;
         }
 
+        @media (min-width: 768px) {
+            .invite-card {
+                padding: 50px 30px;
+                margin: 40px 10px;
+            }
+        }
+
         .corner-accent {
             position: absolute;
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             border: 2px solid var(--neon-yellow);
             opacity: 0.6;
         }
 
         .top-l {
-            top: 20px;
-            left: 20px;
+            top: 15px;
+            left: 15px;
             border-right: 0;
             border-bottom: 0;
         }
 
         .top-r {
-            top: 20px;
-            right: 20px;
+            top: 15px;
+            right: 15px;
             border-left: 0;
             border-bottom: 0;
         }
 
         .bot-l {
-            bottom: 20px;
-            left: 20px;
+            bottom: 15px;
+            left: 15px;
             border-right: 0;
             border-top: 0;
         }
 
         .bot-r {
-            bottom: 20px;
-            right: 20px;
+            bottom: 15px;
+            right: 15px;
             border-left: 0;
             border-top: 0;
         }
@@ -179,23 +188,31 @@
             font-weight: 800;
             font-style: italic;
             text-transform: uppercase;
-            font-size: 3.8rem;
+            font-size: 2.8rem;
+            /* Ajustado para mobile */
             line-height: 0.95;
             letter-spacing: -2px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+        }
+
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 3.8rem;
+            }
         }
 
         .btn-action {
             display: block;
             width: 100%;
-            padding: 20px;
+            padding: 16px;
             border-radius: 4px;
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             text-decoration: none;
+            font-size: 14px;
         }
 
         .btn-confirm {
@@ -247,12 +264,12 @@
             }
         }
 
-        /* Estilo para a Nota de Acesso */
         .obs-box {
             border-left: 3px solid var(--neon-yellow);
             background: rgba(255, 242, 0, 0.05);
-            padding: 15px;
-            margin: 30px 0;
+            padding: 12px;
+            margin: 15px 0;
+            /* Reduzido margem */
             text-align: left;
         }
     </style>
@@ -273,53 +290,54 @@
 
         <!-- Cabeçalho -->
         <header class="relative z-10">
-            <div class="pixel-font text-[9px] md:text-[11px] neon-text-yellow mb-8 tracking-[0.4em] animate-pulse">
+            <div
+                class="pixel-font text-[8px] md:text-[11px] neon-text-yellow mb-3 md:mb-6 tracking-[0.3em] animate-pulse">
                 [ ACHIEVEMENT UNLOCKED ]
             </div>
 
-            <h2 class="pixel-font text-lg text-white mb-10 tracking-widest">
+            <h2 class="pixel-font text-xs md:text-lg text-white mb-3 md:mb-8 tracking-widest">
                 LEVEL 4.0
             </h2>
 
             <h1 class="hero-title neon-text-pink italic">
                 Ana Paula
             </h1>
-            <p class="text-xs uppercase tracking-[0.6em] text-cyan-400 font-bold mb-12">Aniversário</p>
+            <p class="text-[10px] uppercase tracking-[0.4em] text-cyan-400 font-bold mb-4 md:mb-8">Aniversário</p>
         </header>
 
-        <!-- Informações -->
-        <section class="relative z-10 mt-16">
+        <!-- Informações (Subidos!) -->
+        <section class="relative z-10 mt-2 md:mt-4">
             <div class="grid grid-cols-2 gap-1 bg-white/10 p-1">
-                <div class="bg-[#0a0a20] py-8">
-                    <span class="pixel-font text-[9px] text-cyan-400 block mb-3">DATA</span>
-                    <p class="text-4xl font-black tracking-tighter">31.01</p>
-                    <p class="text-xs text-pink-500 font-bold mt-1">2026</p>
+                <div class="bg-[#0a0a20] py-4 md:py-8">
+                    <span class="pixel-font text-[8px] text-cyan-400 block mb-2">DATA</span>
+                    <p class="text-3xl md:text-4xl font-black tracking-tighter">31.01</p>
+                    <p class="text-[10px] text-pink-500 font-bold mt-1">2026</p>
                 </div>
-                <div class="bg-[#0a0a20] py-8">
-                    <span class="pixel-font text-[9px] text-cyan-400 block mb-3">HORÁRIO</span>
-                    <p class="text-4xl font-black tracking-tighter">20:00</p>
-                    <p class="text-xs text-pink-500 font-bold mt-1">SÁBADO</p>
+                <div class="bg-[#0a0a20] py-4 md:py-8">
+                    <span class="pixel-font text-[8px] text-cyan-400 block mb-2">HORÁRIO</span>
+                    <p class="text-3xl md:text-4xl font-black tracking-tighter">20:00</p>
+                    <p class="text-[10px] text-pink-500 font-bold mt-1">SÁBADO</p>
                 </div>
             </div>
 
             <!-- Localização -->
-            <div class="mt-12 px-4">
-                <div class="flex items-center justify-center gap-4 mb-4">
+            <div class="mt-6 md:mt-10 px-2">
+                <div class="flex items-center justify-center gap-4 mb-3">
                     <div class="h-px flex-1 bg-gradient-to-r from-transparent to-white/30"></div>
-                    <span class="pixel-font text-[9px] text-yellow-400">LOCALIZAÇÃO</span>
+                    <span class="pixel-font text-[8px] text-yellow-400">LOCALIZAÇÃO</span>
                     <div class="h-px flex-1 bg-gradient-to-l from-transparent to-white/30"></div>
                 </div>
-                <p class="text-2xl font-black tracking-tight mb-2 neon-text-blue">Máquina do Tempo</p>
-                <p class="text-sm opacity-70 leading-relaxed max-w-[420px] mx-auto">
+                <p class="text-xl md:text-2xl font-black tracking-tight mb-1 neon-text-blue">Máquina do Tempo</p>
+                <p class="text-xs md:text-sm opacity-70 leading-relaxed max-w-[420px] mx-auto">
                     Avenida Homero Castelo Branco, nº 330<br>
                     Teresina - Piauí
                 </p>
             </div>
 
             <!-- Indicador de Rolagem -->
-            <div class="mt-12 mb-4 flex flex-col items-center gap-2 scroll-indicator">
-                <span class="pixel-font text-[7px] text-white/40 tracking-[0.3em]">MISSÃO: CONFIRMAR</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-400" fill="none" viewBox="0 0 24 24"
+            <div class="mt-8 mb-4 flex flex-col items-center gap-2 scroll-indicator">
+                <span class="pixel-font text-[7px] text-white/60 tracking-[0.3em]">MISSÃO: CONFIRMAR</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-cyan-400" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7-7-7" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-7 7-7-7"
@@ -329,14 +347,14 @@
         </section>
 
         <!-- Ações -->
-        <div class="relative z-10 mt-10 px-4">
+        <div class="relative z-10 px-2">
             <button onclick="confirmPresence()" class="btn-action btn-confirm">
                 Confirmar Presença
             </button>
 
             <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Homero+Castelo+Branco+330" target="_blank"
                 class="btn-action btn-map flex items-center justify-center gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -348,25 +366,25 @@
         </div>
 
         <!-- Nota de Acesso Final -->
-        <div class="relative z-10 px-4">
+        <div class="relative z-10 px-2">
             <div class="obs-box">
-                <p class="text-[10px] text-yellow-400 pixel-font mb-2">NOTA DE ACESSO</p>
-                <p class="text-xs leading-relaxed text-white/90">
+                <p class="text-[9px] text-yellow-400 pixel-font mb-2">NOTA DE ACESSO</p>
+                <p class="text-[11px] leading-relaxed text-white/90">
                     Sistema de comanda individual: entrada e consumo por conta do convidado.
                 </p>
             </div>
         </div>
 
         <!-- Rodapé -->
-        <footer class="relative z-10 mt-6 pt-10 border-t border-white/10">
-            <p class="pixel-font text-[8px] leading-loose tracking-[0.3em] opacity-60">
+        <footer class="relative z-10 mt-2 pt-4 border-t border-white/10">
+            <p class="pixel-font text-[7px] leading-loose tracking-[0.2em] opacity-60">
                 PREPARE-SE PARA UMA VIAGEM NO TEMPO<br>
                 HISTÓRIA CARREGANDO: 100%
             </p>
-            <div class="mt-6 flex justify-center gap-3">
-                <div class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></div>
-                <div class="w-2 h-2 rounded-full bg-pink-500 animate-pulse" style="animation-delay: 0.2s"></div>
-                <div class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" style="animation-delay: 0.4s"></div>
+            <div class="mt-4 flex justify-center gap-3">
+                <div class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></div>
+                <div class="w-1.5 h-1.5 rounded-full bg-pink-500 animate-pulse" style="animation-delay: 0.2s"></div>
+                <div class="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse" style="animation-delay: 0.4s"></div>
             </div>
         </footer>
     </main>
@@ -393,6 +411,7 @@
         }
 
         const card = document.getElementById('card');
+
         document.addEventListener('mousemove', (e) => {
             if (window.innerWidth > 768) {
                 const xAxis = (window.innerWidth / 2 - e.pageX) / 60;
@@ -404,11 +423,11 @@
         if (window.DeviceOrientationEvent) {
             window.addEventListener('deviceorientation', (e) => {
                 if (e.beta && e.gamma) {
-                    const x = e.beta / 8;
-                    const y = e.gamma / 8;
+                    const x = Math.max(Math.min(e.beta / 10, 10), -10);
+                    const y = Math.max(Math.min(e.gamma / 10, 10), -10);
                     card.style.transform = `rotateX(${x}deg) rotateY(${y}deg)`;
                 }
-            });
+            }, true);
         }
     </script>
 </body>
